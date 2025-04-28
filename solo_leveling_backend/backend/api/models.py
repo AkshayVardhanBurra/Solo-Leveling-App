@@ -9,7 +9,8 @@ class UserProfile(models.Model):
     next_xp = models.IntegerField(default = 100)
     level = models.IntegerField(default = 1)
     date_created = models.DateField(auto_now_add=True)
-    #foreign key to actual user account.
+    profile_picture = models.ImageField(blank=True, upload_to='profile_pics/', default='default.jpg')
+    description = models.TextField(max_length=300, blank=True)
 
 
 class Task(models.Model):
